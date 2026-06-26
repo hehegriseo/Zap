@@ -1,0 +1,14 @@
+[package]
+name = "zap-sound-library"
+description = "Sound organization, metadata extraction, search, and waveform generation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+zap-shared.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+
+[lints]
+workspace = true

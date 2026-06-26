@@ -1,0 +1,17 @@
+[package]
+name = "zap-shared"
+description = "Shared types, events, commands, and error definitions for Zap"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+dirs.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+target/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Rust
+**/*.rs.bk
+
+# Tauri
+apps/desktop/src-tauri/target/
+apps/desktop/src-tauri/WixTools/
+apps/desktop/src-tauri/Frameworks/
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+coverage/
+*.profraw
+*.profdata
+
+# Misc
+*.tgz
+.cache/
+
+# SQLite
+*.db
+*.db-wal
+*.db-shm
+
+# Tauri generated
+gen/
+
+# Rust analyzer
+.vscode/settings.json
+
+# pnpm
+.pnpm-store/
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Linux
+.directory

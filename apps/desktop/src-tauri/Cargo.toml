@@ -1,0 +1,38 @@
+[package]
+name = "zap-desktop"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "zap_desktop_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[[bin]]
+name = "zap"
+path = "src/main.rs"
+
+[dependencies]
+zap-shared.workspace = true
+zap-storage.workspace = true
+zap-settings.workspace = true
+zap-logging.workspace = true
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[lints]
+workspace = true
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

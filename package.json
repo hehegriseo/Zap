@@ -1,0 +1,12 @@
+{
+  "name": "zap",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "pnpm --filter zap-desktop dev",
+    "build": "pnpm --filter zap-desktop build",
+    "lint": "pnpm --filter zap-desktop lint",
+    "typecheck": "pnpm --filter zap-desktop typecheck",
+    "test": "pnpm --filter zap-desktop test"
+  }
+}

@@ -1,0 +1,73 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/shared",
+    "crates/storage",
+    "crates/settings",
+    "crates/logging",
+    "crates/audio-engine",
+    "crates/pipewire-manager",
+    "crates/virtual-mic",
+    "crates/hotkeys",
+    "crates/sound-library",
+    "crates/plugins",
+    "apps/desktop/src-tauri",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/zap-soundboard/zap"
+description = "A modern, PipeWire-native, open-source soundboard for Linux"
+authors = ["Zap Contributors"]
+
+[workspace.lints.rust]
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+tracing-appender = "0.2"
+
+# Database
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+# ID generation
+uuid = { version = "1", features = ["v4", "serde"] }
+
+# Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Utilities
+dirs = "5"
+walkdir = "2"
+parking_lot = "0.12"
+
+# Internal crates
+zap-shared = { path = "crates/shared" }
+zap-storage = { path = "crates/storage" }
+zap-settings = { path = "crates/settings" }
+zap-logging = { path = "crates/logging" }
+zap-audio-engine = { path = "crates/audio-engine" }
+zap-pipewire-manager = { path = "crates/pipewire-manager" }
+zap-virtual-mic = { path = "crates/virtual-mic" }
+zap-hotkeys = { path = "crates/hotkeys" }
+zap-sound-library = { path = "crates/sound-library" }
+zap-plugins = { path = "crates/plugins" }
