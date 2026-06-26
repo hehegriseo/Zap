@@ -110,5 +110,5 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Tauri app
-        run: cargo tauri build
+        run: pnpm tauri build
         working-directory: apps/desktop
