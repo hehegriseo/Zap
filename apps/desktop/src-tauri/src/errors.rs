@@ -36,3 +36,30 @@ impl From<String> for CommandError {
         }
     }
 }
+
+impl From<zap_storage::StorageError> for CommandError {
+    fn from(err: zap_storage::StorageError) -> Self {
+        Self {
+            message: err.to_string(),
+            code: Some("STORAGE_ERROR".into()),
+        }
+    }
+}
+
+impl From<zap_settings::SettingsError> for CommandError {
+    fn from(err: zap_settings::SettingsError) -> Self {
+        Self {
+            message: err.to_string(),
+            code: Some("SETTINGS_ERROR".into()),
+        }
+    }
+}
+
+impl From<std::io::Error> for CommandError {
+    fn from(err: std::io::Error) -> Self {
+        Self {
+            message: err.to_string(),
+            code: Some("IO_ERROR".into()),
+        }
+    }
+}

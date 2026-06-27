@@ -7,6 +7,7 @@ pub mod backend;
 pub mod bindings;
 pub mod conflict;
 pub mod error;
+pub mod evdev;
 pub mod manager;
 pub mod x11;
 pub mod xdg_portal;

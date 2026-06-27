@@ -71,3 +71,10 @@ zap-virtual-mic = { path = "crates/virtual-mic" }
 zap-hotkeys = { path = "crates/hotkeys" }
 zap-sound-library = { path = "crates/sound-library" }
 zap-plugins = { path = "crates/plugins" }
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

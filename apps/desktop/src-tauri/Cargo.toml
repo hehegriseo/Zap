@@ -23,6 +23,7 @@ serde_json.workspace = true
 tracing.workspace = true
 anyhow.workspace = true
 thiserror.workspace = true
+uuid.workspace = true
 
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
@@ -30,9 +31,4 @@ tauri-build = { version = "2", features = [] }
 [lints]
 workspace = true
 
-[profile.release]
-panic = "abort"
-codegen-units = 1
-lto = true
-opt-level = "s"
-strip = true
+

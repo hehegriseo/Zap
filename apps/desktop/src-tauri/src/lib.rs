@@ -28,8 +28,24 @@ pub fn run() {
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
+            // Health check
             commands::ping,
             commands::get_app_version,
+            commands::list_output_apps,
+            // Library management
+            commands::library::list_collections,
+            commands::library::import_folder,
+            commands::library::list_sounds,
+            commands::library::rename_sound,
+            commands::library::toggle_favorite,
+            commands::library::set_sound_volume,
+            commands::library::delete_sound,
+            commands::library::assign_hotkey,
+            commands::library::remove_hotkey,
+            commands::library::list_hotkeys,
+            // Settings
+            commands::settings::get_settings,
+            commands::settings::save_settings,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

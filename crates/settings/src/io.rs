@@ -60,4 +60,16 @@ impl SettingsIo {
     pub fn path(&self) -> &Path {
         &self.path
     }
+
+    /// Returns the path to the profiles JSON file.
+    ///
+    /// This is always `<config_dir>/profiles.json` regardless of the
+    /// main config path.
+    #[must_use]
+    pub fn profiles_path(&self) -> std::path::PathBuf {
+        self.path
+            .parent()
+            .unwrap_or(&self.path)
+            .join("profiles.json")
+    }
 }

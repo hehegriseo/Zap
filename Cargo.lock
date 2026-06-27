@@ -4854,6 +4854,7 @@ dependencies = [
  "tauri-plugin-shell",
  "thiserror 2.0.18",
  "tracing",
+ "uuid",
  "zap-logging",
  "zap-settings",
  "zap-shared",
